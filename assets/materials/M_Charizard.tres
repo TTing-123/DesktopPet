@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://mslgu4v5743c"]
+
+[ext_resource type="Shader" path="res://assets/materials/M_transparent_shader.gdshader" id="1_f3fem"]
+[ext_resource type="Texture2D" uid="uid://lmufhug5417a" path="res://assets/pets/Charizard.png" id="2_lhsob"]
+
+[resource]
+shader = ExtResource("1_f3fem")
+shader_parameter/texture_albedo = ExtResource("2_lhsob")

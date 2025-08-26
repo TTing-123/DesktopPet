@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqy3dcus7hfbs"]
+
+[ext_resource type="Script" path="res://scripts/pet_system.gd" id="1_yqd8p"]
+[ext_resource type="Script" path="res://scripts/pet.gd" id="2_b12ft"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="3_rsw1s"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08fqa"]
+load_path = "res://.godot/imported/Charizard.png-9fb716d0bc2e1e5d50e7c8fe84ab116c.ctex"
+
+[node name="PetSystem" type="Node2D"]
+script = ExtResource("1_yqd8p")
+
+[node name="Pet" type="CharacterBody2D" parent="."]
+script = ExtResource("2_b12ft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pet"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pet"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pet"]
+texture = SubResource("CompressedTexture2D_08fqa")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_rsw1s")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PetSelection" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PetButton1" type="Button" parent="UI/Control/PetSelection"]
+layout_mode = 2
+text = "喷火龙"
+
+[node name="PetButton2" type="Button" parent="UI/Control/PetSelection"]
+layout_mode = 2
+text = "梦幻"
+
+[node name="PetButton3" type="Button" parent="UI/Control/PetSelection"]
+layout_mode = 2
+text = "皮卡丘"
+
+[node name="StatusLabel" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
