@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lmufhug5417a"
-path="res://.godot/imported/Charizard.png-9fb716d0bc2e1e5d50e7c8fe84ab116c.ctex"
+uid="uid://lr2euw60luiv"
+path="res://.godot/imported/RUN.png-a02d2e19745350e12f1cbd038c10f8e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pets/Charizard.png"
-dest_files=["res://.godot/imported/Charizard.png-9fb716d0bc2e1e5d50e7c8fe84ab116c.ctex"]
+source_file="res://assets/Sprites/RUN.png"
+dest_files=["res://.godot/imported/RUN.png-a02d2e19745350e12f1cbd038c10f8e6.ctex"]
 
 [params]
 

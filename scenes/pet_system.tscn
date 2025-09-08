@@ -1,54 +1,181 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqy3dcus7hfbs"]
+[gd_scene load_steps=12 format=3 uid="uid://bqy3dcus7hfbs"]
 
-[ext_resource type="Script" path="res://scripts/pet_system.gd" id="1_yqd8p"]
-[ext_resource type="Script" path="res://scripts/pet.gd" id="2_b12ft"]
-[ext_resource type="Script" path="res://scripts/ui.gd" id="3_rsw1s"]
+[ext_resource type="Script" path="res://scripts/pet_controller.gd" id="1_7s6a5"]
+[ext_resource type="Texture2D" uid="uid://lr2euw60luiv" path="res://assets/Sprites/RUN.png" id="1_wo6tc"]
+[ext_resource type="Texture2D" uid="uid://k1yk8fmicxof" path="res://assets/Sprites/ATTACK.png" id="2_p74ou"]
+[ext_resource type="Texture2D" uid="uid://bjcq60mlmlvk2" path="res://assets/Sprites/IDLE.png" id="2_yeerr"]
+[ext_resource type="Texture2D" uid="uid://dc7lxb0bue2fb" path="res://assets/Sprites/HURT.png" id="4_1fbga"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08fqa"]
-load_path = "res://.godot/imported/Charizard.png-9fb716d0bc2e1e5d50e7c8fe84ab116c.ctex"
+[sub_resource type="Animation" id="Animation_jdkq8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Run:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Attack:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Hurt:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dmftu"]
+resource_name = "attack"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Attack:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_u738t"]
+resource_name = "hurt"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Hurt:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_j3t37"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_vyhgr"]
+resource_name = "run"
+length = 1.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Run:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5gqj"]
+_data = {
+"RESET": SubResource("Animation_jdkq8"),
+"attack": SubResource("Animation_dmftu"),
+"hurt": SubResource("Animation_u738t"),
+"idle": SubResource("Animation_j3t37"),
+"run": SubResource("Animation_vyhgr")
+}
 
 [node name="PetSystem" type="Node2D"]
-script = ExtResource("1_yqd8p")
 
-[node name="Pet" type="CharacterBody2D" parent="."]
-script = ExtResource("2_b12ft")
+[node name="PetController" type="Node" parent="."]
+script = ExtResource("1_7s6a5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pet"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Idle")
+libraries = {
+"": SubResource("AnimationLibrary_q5gqj")
+}
+autoplay = "attack"
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pet"]
+[node name="Idle" type="Sprite2D" parent="."]
+position = Vector2(230, 220)
+scale = Vector2(5, 5)
+texture = ExtResource("2_yeerr")
+flip_h = true
+hframes = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="Pet"]
-texture = SubResource("CompressedTexture2D_08fqa")
+[node name="Run" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(230, 220)
+scale = Vector2(5, 5)
+texture = ExtResource("1_wo6tc")
+flip_h = true
+hframes = 16
 
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("3_rsw1s")
+[node name="Attack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(230, 220)
+scale = Vector2(5, 5)
+texture = ExtResource("2_p74ou")
+flip_h = true
+hframes = 7
 
-[node name="Control" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PetSelection" type="VBoxContainer" parent="UI/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PetButton1" type="Button" parent="UI/Control/PetSelection"]
-layout_mode = 2
-text = "喷火龙"
-
-[node name="PetButton2" type="Button" parent="UI/Control/PetSelection"]
-layout_mode = 2
-text = "梦幻"
-
-[node name="PetButton3" type="Button" parent="UI/Control/PetSelection"]
-layout_mode = 2
-text = "皮卡丘"
-
-[node name="StatusLabel" type="Label" parent="UI/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Hurt" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(230, 220)
+scale = Vector2(5, 5)
+texture = ExtResource("4_1fbga")
+flip_h = true
+hframes = 4

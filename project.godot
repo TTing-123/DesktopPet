@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="AIDesktopFollow"
-run/main_scene="res://scenes/pet_system.tscn"
+run/main_scene="res://scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=300
+window/size/viewport_height=400
+window/size/borderless=true
+window/size/always_on_top=true
 window/size/transparent=true
 window/per_pixel_transparency/allowed=true
 

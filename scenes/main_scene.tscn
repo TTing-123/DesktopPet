@@ -1,9 +1,26 @@
-[gd_scene format=3 uid="uid://bo4hcg1whlnr3"]
+[gd_scene load_steps=5 format=3 uid="uid://bo4hcg1whlnr3"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_hr3f0"]
+[ext_resource type="PackedScene" uid="uid://bqy3dcus7hfbs" path="res://scenes/pet_system.tscn" id="1_j27uo"]
+[ext_resource type="PackedScene" uid="uid://dugar0nsw2mdu" path="res://scenes/dialog_box.tscn" id="2_esu0u"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="3_xt0i5"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="MainScene" type="Node"]
+script = ExtResource("1_hr3f0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+script = ExtResource("3_xt0i5")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="PetSystem" parent="." instance=ExtResource("1_j27uo")]
+
+[node name="DialogBox" parent="." instance=ExtResource("2_esu0u")]
+visible = false
+mouse_filter = 1

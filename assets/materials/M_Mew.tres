@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bblbheqc4bfs0"]
-
-[ext_resource type="Shader" path="res://assets/materials/M_transparent_shader.gdshader" id="1_qydwm"]
-[ext_resource type="Texture2D" uid="uid://ctd1wj20gaq07" path="res://assets/pets/Mew.png" id="2_lm8sq"]
-
-[resource]
-shader = ExtResource("1_qydwm")
-shader_parameter/texture_albedo = ExtResource("2_lm8sq")

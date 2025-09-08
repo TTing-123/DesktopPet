@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctd1wj20gaq07"
-path="res://.godot/imported/Mew.png-a2a92bbfea923bad041d2ba04d3c0940.ctex"
+uid="uid://k1yk8fmicxof"
+path="res://.godot/imported/ATTACK.png-923b1700cfe227c0e7fcef74d94205d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pets/Mew.png"
-dest_files=["res://.godot/imported/Mew.png-a2a92bbfea923bad041d2ba04d3c0940.ctex"]
+source_file="res://assets/Sprites/ATTACK.png"
+dest_files=["res://.godot/imported/ATTACK.png-923b1700cfe227c0e7fcef74d94205d9.ctex"]
 
 [params]
 

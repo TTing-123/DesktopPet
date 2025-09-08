@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bkwemveljs0b5"]
-
-[ext_resource type="Shader" path="res://assets/materials/M_transparent_shader.gdshader" id="1_2e4y5"]
-[ext_resource type="Texture2D" uid="uid://dhbx0sjnbtix7" path="res://assets/pets/Pikachu.png" id="2_yhjxn"]
-
-[resource]
-shader = ExtResource("1_2e4y5")
-shader_parameter/texture_albedo = ExtResource("2_yhjxn")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbx0sjnbtix7"
-path="res://.godot/imported/Pikachu.png-94821d51140d08e9bd13f8aab903a5be.ctex"
+uid="uid://bjcq60mlmlvk2"
+path="res://.godot/imported/IDLE.png-6f39f0cb942f8e5a9c92973c579256cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pets/Pikachu.png"
-dest_files=["res://.godot/imported/Pikachu.png-94821d51140d08e9bd13f8aab903a5be.ctex"]
+source_file="res://assets/Sprites/IDLE.png"
+dest_files=["res://.godot/imported/IDLE.png-6f39f0cb942f8e5a9c92973c579256cf.ctex"]
 
 [params]
 
